@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My Web Page</title>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--form for roll number, name, dept(CSE,IT,EEE,ECE), Year of admission-->
+        <form>
+            <label>Roll Number:</label>
+            <input type="text" id="roll" name="roll" placeholder="Enter roll number">
+            <label>Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name">
+            <label>Department:</label>
+            <select id="dept" name="dept">
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+            </select>
+            <label>Year of Admission:</label>
+            <input type="text" id="year" name="year" placeholder="Enter year of admission">
+        </form>   
+        <button onclick="display_data()">Add</button>
+        <ul id="stud_list">
+
+        </ul>
+    </body>
+    <script>
+        // jQuery
+       function display_data(){
+        var roll = $("#roll").val();
+        // var roll = document.getElementById("roll").value;
+        var name = $("#name").val();
+        var dept = $("#dept").val();
+        var year = $("#year").val();
+        console.log("Roll Number: "+roll);
+        console.log("Name: "+name);
+        console.log("Department: "+dept);
+        console.log("Year of Admission: "+year);
+       }
+    </script>
+</html> 
