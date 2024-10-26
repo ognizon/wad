@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My Web Page</title>
+    </head>
+    <body>
+        <!--form for roll number, name, dept(CSE,IT,EEE,ECE), Year of admission-->
+        <form>
+            <label>Roll Number:</label>
+            <input type="text" id="roll" name="roll" placeholder="Enter roll number">
+            <label>Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name">
+            <label>Department:</label>
+            <select id="dept" name="dept">
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+            </select>
+            <label>Year of Admission:</label>
+            <input type="text" id="year" name="year" placeholder="Enter year of admission">
+        </form>   
+        <button onclick="display_data()">Add</button>
+        <ul id="stud_list">
+
+        </ul>
+    </body>
+    <script>
+       function display_data(){
+        roll = document.getElementById("roll").value;
+        name = document.getElementById("name").value;
+        dept = document.getElementById("dept").value;
+        year = document.getElementById("year").value;
+        console.log("Roll Number: "+roll);
+        console.log("Name: "+name);
+        console.log("Department: "+dept);
+        console.log("Year of Admission: "+year);
+        //displaying the data in the table
+        // document.getElementById("t_roll").innerHTML = roll;
+        // document.getElementById("t_name").innerHTML = name;
+        // document.getElementById("t_dept").innerHTML = dept;
+        // document.getElementById("t_year").innerHTML = year;
+                //Add li
+        var list = document.getElementById("stud_list"); 
+        var li = document.createElement("li"); // <li></li>
+        li.innerHTML = "Roll Number: "+roll+"<br>Name: "+name; // <li>Roll Number: 5<br>Name: John</li>
+        list.appendChild(li); // <ul><li>Roll Number: 5<br>Name: John</li></ul>
+       }
+    </script>
+</html> 
