@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My Web Page</title>
+    </head>
+    <body>
+        <!--form for roll number, name, dept(CSE,IT,EEE,ECE), Year of admission-->
+        <form>
+            <label>Roll Number:</label>
+            <input type="text" id="roll" name="roll" placeholder="Enter roll number">
+            <label>Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name">
+            <label>Department:</label>
+            <select id="dept" name="dept">
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+            </select>
+            <label>Year of Admission:</label>
+            <input type="text" id="year" name="year" placeholder="Enter year of admission">
+        </form>   
+        <button onclick="display_data()">Add</button>
+        <table id="stud_table">
+            <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Year of Admission</th>
+            </tr>
+            </thead>
+            <tbody id=t_body">
+            
+            </tbody>
+        </table>
+    </body>
+    <script>
+       function display_data(){
+        roll = document.getElementById("roll").value;
+        name = document.getElementById("name").value;
+        dept = document.getElementById("dept").value;
+        year = document.getElementById("year").value;
+        console.log("Roll Number: "+roll);
+        console.log("Name: "+name);
+        console.log("Department: "+dept);
+        console.log("Year of Admission: "+year);
+        //displaying the data in the table
+        // document.getElementById("t_roll").innerHTML = roll;
+        // document.getElementById("t_name").innerHTML = name;
+        // document.getElementById("t_dept").innerHTML = dept;
+        // document.getElementById("t_year").innerHTML = year;
+                //Add table row
+        var table = document.getElementById("t_body");
+        var row = '<tr><td>'+roll+'</td>';
+            row+= '<td>'+name+'</td>';
+            row+= '<td>'+dept+'</td>';
+            row+= '<td>'+year+'</td></tr>';
+        //   <tr><td>5</td><td>John</td><td>IT</td><td>2020</td></tr>  
+        //Append  child
+        table.innerHTML = row;
+
+       }
+    </script>
+</html> 
