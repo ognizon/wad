@@ -21,15 +21,14 @@
             <label>Year of Admission:</label>
             <input type="text" id="year" name="year" placeholder="Enter year of admission">
         </form>   
-        <button onclick="display_data()">Add</button>
+        <button id="btnAdd">Add</button>
         <ul id="stud_list">
 
         </ul>
     </body>
     <script>
-        // jQuery
-       function display_data(){
-        var roll = $("#roll").val();
+        $("#btnAdd").click(function(){
+            var roll = $("#roll").val();
         // var roll = document.getElementById("roll").value;
         var name = $("#name").val();
         var dept = $("#dept").val();
@@ -42,6 +41,7 @@
         //Add to list item
         var li = "<li>Roll Number: "+roll+"<br>Name: "+name+"</li>";
         $("#stud_list").append(li);
-       }
+        }
+        );
     </script>
 </html> 
